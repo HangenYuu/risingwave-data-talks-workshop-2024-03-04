@@ -1,4 +1,4 @@
-Question 1:
+# Question 1
 Create the materialized view trip_stats.
 ```sql
 CREATE MATERIALIZED VIEW trip_stats AS
@@ -27,7 +27,8 @@ FROM
 ORDER BY avg_trip_time DESC
 LIMIT 1;
 ```
-Question 2:
+
+# Question 2
 Create the modified materialized view trip_stats.
 ```sql
 CREATE MATERIALIZED VIEW trip_stats_2 AS
@@ -56,7 +57,8 @@ WHERE
     pick_up_zone = 'Yorkville East'
     AND drop_off_zone = 'Steinway';
 ```
-Question 3:
+
+# Question 3
 Create the materialized view trip_stats_3 with dynamic filter condition for the latest pickup time.
 ```sql
 CREATE MATERIALIZED VIEW trip_stats_3 AS
