@@ -26,6 +26,11 @@ FROM
     trip_stats
 ORDER BY avg_trip_time DESC
 LIMIT 1;
+---
+  pick_up_zone  | drop_off_zone | avg_trip_time 
+----------------+---------------+---------------
+ Yorkville East | Steinway      |   1439.550000
+(1 row)
 ```
 
 # Question 2
@@ -56,6 +61,25 @@ FROM
 WHERE
     pick_up_zone = 'Yorkville East'
     AND drop_off_zone = 'Steinway';
+---
+ sum 
+-----
+   1
+(1 row)
+```
+Double check the answer (1 is too small?)
+```sql
+SELECT
+    *
+FROM
+    trip_stats
+ORDER BY avg_trip_time DESC
+LIMIT 1;
+---
+  pick_up_zone  | drop_off_zone | max_trip_time | min_trip_time | avg_trip_time 
+----------------+---------------+---------------+---------------+---------------
+ Yorkville East | Steinway      |   1439.550000 |   1439.550000 |   1439.550000
+(1 row)
 ```
 
 # Question 3
@@ -89,4 +113,11 @@ FROM
     trip_stats_3
 ORDER BY trip_count DESC
 LIMIT 3;
+---
+    pick_up_zone     | trip_count 
+---------------------+------------
+ LaGuardia Airport   |         19
+ Lincoln Square East |         17
+ JFK Airport         |         17
+(3 rows)
 ```
